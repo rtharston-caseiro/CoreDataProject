@@ -12,8 +12,8 @@ struct FilteredListView<T: NSManagedObject, Content: View>: View {
     
     let content: (T) -> Content
     
-    init(filterValue: String, predicate: String, filter: String?, @ViewBuilder content: @escaping (T) -> Content) {
-        let nsPredicate = filter == nil ? nil : NSPredicate(format: "%K \(predicate) %@", filterValue, filter!)
+    init(filterValue: String, predicate: NSPredicate.Option, filter: String?, @ViewBuilder content: @escaping (T) -> Content) {
+        let nsPredicate = filter == nil ? nil : NSPredicate(format: "%K \(predicate.stringValue) %@", filterValue, filter!)
         _results = FetchRequest<T>(sortDescriptors: [], predicate: nsPredicate)
         self.content = content
     }

@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            FilteredListView(filterValue: "fullName", predicate: "BEGINSWITH", filter: filter) { (country: Country) in
+            FilteredListView(filterValue: "fullName", predicate: .beginsWith, filter: filter) { (country: Country) in
                 Section(country.wrappedFullName) {
                     ForEach(country.candyArray, id: \.self) { candy in
                         Text(candy.wrappedName)
