@@ -3,6 +3,12 @@
     <entity name="Candy" representedClassName="Candy" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="candy" inverseEntity="Country"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+                <constraint value="origin"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES">
         <attribute name="fullName" optional="YES" attributeType="String"/>
