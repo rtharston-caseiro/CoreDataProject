@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: [], predicate: nil) var ships: FetchedResults<Ship>
+    
+    static let starWarsOnly = NSPredicate(format: "universe == 'Star Wars'")
+    static let lessThanF = NSPredicate(format: "name < %@", "F")
+    static let inArray = NSPredicate(format: "universe IN %@", ["Aliens", "Firefly", "Star Trek"])
+    static let beginsWithE = NSPredicate(format: "name BEGINSWITH %@", "E")
+    static let beginsWithECaseInsensitive = NSPredicate(format: "name BEGINSWITH[c] %@", "e")
+    static let doesNotBeginWithE = NSPredicate(format: "NOT name BEGINSWITH[c] %@", "e")
+    static let starWarsBeginsWithE = NSCompoundPredicate(andPredicateWithSubpredicates: [starWarsOnly, beginsWithE])
+    
+    @FetchRequest(sortDescriptors: [], predicate: Self.starWarsBeginsWithE) var ships: FetchedResults<Ship>
     
     var body: some View {
         VStack {
