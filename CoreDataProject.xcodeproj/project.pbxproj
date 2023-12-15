@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69776EBB2B2BF24F00867CED /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69776EB92B2BF24F00867CED /* Singer+CoreDataClass.swift */; };
+		69776EBC2B2BF24F00867CED /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69776EBA2B2BF24F00867CED /* Singer+CoreDataProperties.swift */; };
+		69776EBE2B2BF26000867CED /* Singer+Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69776EBD2B2BF26000867CED /* Singer+Defaults.swift */; };
+		69776EC02B2BF67900867CED /* FilteredListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69776EBF2B2BF67900867CED /* FilteredListView.swift */; };
 		69FBF3B32B2BDFC700E8651C /* CoreDataProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FBF3B22B2BDFC700E8651C /* CoreDataProjectApp.swift */; };
 		69FBF3B52B2BDFC700E8651C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FBF3B42B2BDFC700E8651C /* ContentView.swift */; };
 		69FBF3B72B2BDFC900E8651C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69FBF3B62B2BDFC900E8651C /* Assets.xcassets */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69776EB92B2BF24F00867CED /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		69776EBA2B2BF24F00867CED /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		69776EBD2B2BF26000867CED /* Singer+Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+Defaults.swift"; sourceTree = "<group>"; };
+		69776EBF2B2BF67900867CED /* FilteredListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredListView.swift; sourceTree = "<group>"; };
 		69FBF3AF2B2BDFC700E8651C /* CoreDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FBF3B22B2BDFC700E8651C /* CoreDataProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProjectApp.swift; sourceTree = "<group>"; };
 		69FBF3B42B2BDFC700E8651C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +72,7 @@
 			children = (
 				69FBF3B22B2BDFC700E8651C /* CoreDataProjectApp.swift */,
 				69FBF3B42B2BDFC700E8651C /* ContentView.swift */,
+				69776EBF2B2BF67900867CED /* FilteredListView.swift */,
 				69FBF3C12B2BE06A00E8651C /* DataController.swift */,
 				69FBF3C62B2BE57500E8651C /* CoreData */,
 				69FBF3B62B2BDFC900E8651C /* Assets.xcassets */,
@@ -84,6 +93,9 @@
 		69FBF3C62B2BE57500E8651C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				69776EB92B2BF24F00867CED /* Singer+CoreDataClass.swift */,
+				69776EBA2B2BF24F00867CED /* Singer+CoreDataProperties.swift */,
+				69776EBD2B2BF26000867CED /* Singer+Defaults.swift */,
 				69FBF3C92B2BE66300E8651C /* Movie+CoreDataClass.swift */,
 				69FBF3CD2B2BE7A800E8651C /* Movie+Defaults.swift */,
 				69FBF3CA2B2BE66300E8651C /* Movie+CoreDataProperties.swift */,
@@ -163,7 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69FBF3B52B2BDFC700E8651C /* ContentView.swift in Sources */,
+				69776EBC2B2BF24F00867CED /* Singer+CoreDataProperties.swift in Sources */,
+				69776EBB2B2BF24F00867CED /* Singer+CoreDataClass.swift in Sources */,
+				69776EC02B2BF67900867CED /* FilteredListView.swift in Sources */,
 				69FBF3CE2B2BE7A800E8651C /* Movie+Defaults.swift in Sources */,
+				69776EBE2B2BF26000867CED /* Singer+Defaults.swift in Sources */,
 				69FBF3C22B2BE06A00E8651C /* DataController.swift in Sources */,
 				69FBF3C52B2BE09300E8651C /* CoreDataProject.xcdatamodeld in Sources */,
 				69FBF3CB2B2BE66300E8651C /* Movie+CoreDataClass.swift in Sources */,
