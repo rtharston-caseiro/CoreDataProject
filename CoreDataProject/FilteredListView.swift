@@ -12,9 +12,9 @@ struct FilteredListView<T: NSManagedObject, Content: View>: View {
     
     let content: (T) -> Content
     
-    init(filter: String?, filterValue: String, @ViewBuilder content: @escaping (T) -> Content) {
-        let predicate = filter == nil ? nil : NSPredicate(format: "%K BEGINSWITH %@", filterValue, filter!)
-        _results = FetchRequest<T>(sortDescriptors: [], predicate: predicate)
+    init(filterValue: String, predicate: String, filter: String?, @ViewBuilder content: @escaping (T) -> Content) {
+        let nsPredicate = filter == nil ? nil : NSPredicate(format: "%K \(predicate) %@", filterValue, filter!)
+        _results = FetchRequest<T>(sortDescriptors: [], predicate: nsPredicate)
         self.content = content
     }
     

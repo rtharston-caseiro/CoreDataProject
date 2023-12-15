@@ -11,14 +11,14 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) private var countries: FetchedResults<Country>
     
+    @State private var filter: String?
+    
     var body: some View {
         VStack {
-            List {
-                ForEach(countries, id: \.self) { country in
-                    Section(country.wrappedFullName) {
-                        ForEach(country.candyArray, id: \.self) { candy in
-                            Text(candy.wrappedName)
-                        }
+            FilteredListView(filterValue: "fullName", predicate: "BEGINSWITH", filter: filter) { (country: Country) in
+                Section(country.wrappedFullName) {
+                    ForEach(country.candyArray, id: \.self) { candy in
+                        Text(candy.wrappedName)
                     }
                 }
             }
@@ -49,6 +49,16 @@ struct ContentView: View {
                 candy4.origin?.fullName = "Switzerland"
                 
                 try? moc.save()
+            }
+            
+            Button("Show U") {
+                filter = "U"
+            }
+            Button("Show S") {
+                filter = "S"
+            }
+            Button("Show All") {
+                filter = nil
             }
         }
         .padding()
