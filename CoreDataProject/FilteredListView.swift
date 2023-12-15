@@ -7,17 +7,20 @@
 
 import SwiftUI
 
-struct FilteredListView: View {
-    @FetchRequest private var singers: FetchedResults<Singer>
+struct FilteredListView<T: NSManagedObject, Content: View>: View {
+    @FetchRequest private var results: FetchedResults<T>
     
-    init(filter: String?) {
-        let predicate = filter == nil ? nil : NSPredicate(format: "lastName BEGINSWITH %@", filter!)
-        _singers = FetchRequest<Singer>(sortDescriptors: [], predicate: predicate)
+    let content: (T) -> Content
+    
+    init(filter: String?, filterValue: String, @ViewBuilder content: @escaping (T) -> Content) {
+        let predicate = filter == nil ? nil : NSPredicate(format: "%K BEGINSWITH %@", filterValue, filter!)
+        _results = FetchRequest<T>(sortDescriptors: [], predicate: predicate)
+        self.content = content
     }
     
     var body: some View {
-        List(singers, id: \.self) { singer in
-            Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+        List(results, id: \.self) { result in
+            content(result)
         }
     }
 }
